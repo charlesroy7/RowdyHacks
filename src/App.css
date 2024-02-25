@@ -30,6 +30,8 @@
 
 .App-link {
   color: #61dafb;
+  padding: 20px 40px;
+  border-radius: 20px;
 }
 
 @keyframes App-logo-spin {
@@ -69,7 +71,7 @@
   padding-top:100px;
   border: 1px solid #000000;
   border-radius: 8px;
-  background-color: #94b9ffdd;
+  background-color: #61dafbdf;
 }
 
 .about-us-title {

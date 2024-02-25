@@ -50,9 +50,9 @@ function App() {
         <header className="App-header">
           <h1>Jurassic Parking</h1>
           <p>Enter the world of smart parking.</p>
-          <a className="App-link" href="#" onClick={handleVideoInputClick}>
+          <button style={{ fontSize: '24px' }} className="App-link" href="#" onClick={handleVideoInputClick}>
             Input video
-          </a>
+          </button>
           <input
             type="file"
             ref={fileInputRef}
