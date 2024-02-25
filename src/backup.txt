@@ -1,0 +1,170 @@
+import React, { useState, useRef } from 'react';
+import './App.css';
+import vid from '../src/Busy_Parking_Lot_-_Aerial_Time-Lapse.mp4'
+
+function AboutUs() {
+  return (
+    <div className="about-us-container">
+      <h2>About Us</h2>
+      <p>Welcome to the about page of Jurassic Parking.</p>
+    </div>
+  );
+}
+
+function App() {
+  const fileInputRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState('home'); // Options: 'home', 'aboutUs'
+  // Update the initial video source to use process.env.PUBLIC_URL for local development
+  const [videoSrc, setVideoSrc] = useState(process.env.PUBLIC_URL + '../src/Busy_Parking_Lot_-_Aerial_Time-Lapse.mp4');
+
+  const navigateTo = (pageName) => {
+    setCurrentPage(pageName);
+  };
+
+  const handleVideoInputClick = (event) => {
+    event.preventDefault();
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const videoUrl = URL.createObjectURL(file);
+      setVideoSrc(videoUrl);
+    }
+  };
+
+  return (
+    <div className="App">
+      <video autoPlay loop muted className="App-background-video">
+        <source src={vid} autoPlay loop muted />
+        Your browser does not support the video tag.
+      </video>
+      
+      <nav className="App-nav">
+        <button onClick={() => navigateTo('home')}>Home</button>
+        <button onClick={() => navigateTo('aboutUs')}>About Us</button>
+      </nav>
+
+      {currentPage === 'home' && (
+        <header className="App-header">
+          <h1>Jurassic Parking</h1>
+          <p>Enter the world of smart parking.</p>
+          <a className="App-link" href="#" onClick={handleVideoInputClick}>
+            Input video
+          </a>
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+            style={{ display: 'none' }}
+            accept="video/*"
+          />
+        </header>
+      )}
+
+      {currentPage === 'aboutUs' && <AboutUs />}
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34be; /* Semi-transparent background */
+    min-height: 50vh; /* Reduced height to make the header smaller */
+    width: 100%; /* Ensure the header spans the full width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    z-index: 1; /* Ensure the header appears above the video */
+    position: relative; /* Needed for z-index to take effect */
+  }
+  
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .App-nav {
+    background-color: #333333; /* Dark background color */
+    padding: 10px 20px; /* Some padding around the items */
+    display: flex; /* Use flexbox for layout */
+    justify-content: start; /* Align items to the start of the nav bar */
+  }
+  
+  .App-nav button {
+    background-color: #61dafb; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-right: 10px; /* Margin between buttons if you add more */
+  }
+  
+  .App-nav button:hover {
+    background-color: #519aba; /* Slightly darker on hover */
+  }
+  .about-us-container {
+    min-height: 100vh;
+    padding: 10px;
+    border: 1px solid #b82a2a;
+    border-radius: 8px;
+    background-color: #32476f;
+  }
+  
+  .about-us-title {
+    color:  #8e2e2e;
+    margin-bottom: 10px;
+  }
+  
+  .about-us-content {
+    color: #da1515;
+  }
+  
+  .App-background-video {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    Width: 100%;
+    Height: 100%;
+    object-fit: fill;
+    z-index: -1; /* Ensure video stays in the background */
+  }
+  
