@@ -50,9 +50,16 @@ function App() {
         <header className="App-header">
           <h1>Jurassic Parking</h1>
           <p>Enter the world of smart parking.</p>
-          <button style={{ fontSize: '24px' }} className="App-link" href="#" onClick={handleVideoInputClick}>
-            Input video
-          </button>
+          <a
+  style={{ fontSize: '24px', textDecoration: 'none' }}
+  className="App-link"
+  href="https://universe.roboflow.com/aiml-the-lebron-project/parking-finder/model/1"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Input video
+</a>
+
           <input
             type="file"
             ref={fileInputRef}
