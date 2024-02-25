@@ -5,8 +5,8 @@ import vid from '../src/Busy_Parking_Lot_-_Aerial_Time-Lapse.mp4'
 function AboutUs() {
   return (
     <div className="about-us-container">
-      <h2>About Us</h2>
-      <p>Welcome to the about page of Jurassic Parking.</p>
+      <div style={{ fontSize: '28px' ,fontWeight: 'bold' }}>About us</div>
+      <div style={{ fontSize: '24px' }}>We are an enthusiastic team of novice developers from Dallas, TX, embarking on our first hackathon journey, with the exception of one team member. Our diverse group is composed of students majoring in Computer Information Systems and Computer Science, all united by a passion for technology and innovation. For this hackathon, we set our sights on addressing a pressing issue faced by the University of Texas at San Antonio (UTSA): the challenge of finding parking in a densely populated urban area. Our solution leverages artificial intelligence to monitor parking space availability in real-time, providing invaluable insights into parking patterns and trends. This not only eases the immediate stress of finding parking but also offers data-driven strategies to optimize parking management and improve the overall campus experience.</div>
     </div>
   );
 }

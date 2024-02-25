@@ -55,6 +55,7 @@
   border: none; /* Remove border */
   cursor: pointer; /* Change cursor to pointer on hover */
   margin-right: 10px; /* Margin between buttons if you add more */
+  border-radius: 20px;
 }
 
 .App-nav button:hover {
@@ -63,18 +64,23 @@
 .about-us-container {
   min-height: 100vh;
   padding: 10px;
-  border: 1px solid #b82a2a;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top:100px;
+  border: 1px solid #000000;
   border-radius: 8px;
-  background-color: #32476f;
+  background-color: #94b9ffdd;
 }
 
 .about-us-title {
   color:  #8e2e2e;
   margin-bottom: 10px;
+  padding-bottom: 100px;
 }
 
 .about-us-content {
   color: #da1515;
+  padding-left:1000px;
 }
 
 .App-background-video {
