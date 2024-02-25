@@ -1,0 +1,18 @@
+/* src/AboutUs.css */
+.about-us-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #b82a2a;
+    border-radius: 8px;
+    background-color: #fb2b2b;
+  }
+  
+  .about-us-title {
+    color: #8e2e2e;
+    margin-bottom: 10px;
+  }
+  
+  .about-us-content {
+    color: #da1515;
+  }
+  
